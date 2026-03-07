@@ -1,0 +1,15 @@
+name: DiamondOnJoin
+version: '1.0.0'
+main: com.example.diamondonjoin.DiamondOnJoin
+api-version: '1.21'
+description: Gives players a diamond when they join the server.
+author: YourName
+commands:
+  diamondonjoin:
+    description: Reloads the plugin configuration.
+    usage: /<command>
+    permission: diamondonjoin.reload
+permissions:
+  diamondonjoin.reload:
+    description: Allows reloading the plugin configuration.
+    default: op
