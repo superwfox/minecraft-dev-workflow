@@ -24,6 +24,17 @@ jobs:
           java-version: ${{ github.event.inputs.java_version }}
           distribution: 'temurin'
 
+      - name: Check source files
+        run: |
+          echo "=== Source files ==="
+          find . -name "*.java" | head -50
+          COUNT=$(find . -name "*.java" | wc -l)
+          echo "Total .java files: $COUNT"
+          if [ "$COUNT" -eq 0 ]; then
+            echo "::error::No .java files found, aborting build"
+            exit 1
+          fi
+
       - run: mvn package -DskipTests
         working-directory: .
 
