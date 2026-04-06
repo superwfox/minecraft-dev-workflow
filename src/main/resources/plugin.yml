@@ -1,0 +1,19 @@
+name: PlayerWelcome
+version: '${project.version}'
+main: com.example.playerwelcome.PlayerWelcome
+api-version: '1.21'
+description: A plugin that welcomes players when they join the server.
+author: YourName
+website: https://example.com
+
+commands:
+  welcome:
+    description: Reloads the plugin configuration.
+    usage: /<command>
+    permission: playerwelcome.reload
+    aliases: [pwreload]
+
+permissions:
+  playerwelcome.reload:
+    description: Allows reloading the plugin configuration.
+    default: op
