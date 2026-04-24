@@ -1,0 +1,8 @@
+name: LandPlugin
+version: 1.0.0
+main: com.example.landplugin.LandPlugin
+api-version: 1.21
+commands:
+  land:
+    description: Land command
+    usage: /<command>
