@@ -1,0 +1,8 @@
+name: MaintenanceKicker
+main: com.example.maintenancekicker.MaintenanceKicker
+version: 1.0.0
+api-version: 1.21
+commands:
+  setNotice:
+    description: Set maintenance notice message
+    usage: /setNotice <message>
