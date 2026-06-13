@@ -1,0 +1,15 @@
+name: ItemCleanerTitle
+version: 1.0.0
+main: me.iw46dev.itemcleanertitle.Main
+api-version: "1.21"
+commands:
+  iw:
+    description: 主命令，用于自定义物品名称
+    usage: /<command> [子命令] [参数]
+    aliases: []
+    permission: iw46dev.iw
+permissions:
+  iw46dev.iw:
+    description: 允许使用 /iw 命令
+    default: op
+author: "§eTAHAI§r"

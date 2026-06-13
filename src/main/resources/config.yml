@@ -1,0 +1,5 @@
+# 清理间隔（分钟）
+clean-interval-minutes: 5
+
+# 清理提示（支持 § 颜色代码）
+clean-message: "§c地面物品已清理！"
