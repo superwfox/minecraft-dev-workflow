@@ -1,0 +1,16 @@
+# 星数百分比区间映射（每个星数对应一个加成百分比）
+star-ranges:
+  1: 0.1
+  2: 0.2
+  3: 0.3
+  4: 0.5
+  5: 0.8
+
+# 技能冷却时间（单位：秒）
+cooldowns:
+  light-strike: 10
+  thunder-slam: 30
+  iron-defense: 60
+
+# 搜索半径（单位：方块）
+search-radius: 5

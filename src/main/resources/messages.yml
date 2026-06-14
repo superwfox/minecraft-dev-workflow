@@ -1,0 +1,14 @@
+# 玩家反馈消息配置
+# 使用 § 颜色代码
+
+# 斩杀提示消息
+kill-message: "§6你使用铜剑斩杀了 §e%player%§6！"
+
+# 冷却提示消息
+cooldown-message: "§c铜剑技能冷却中，剩余 §e%seconds%§c 秒。"
+
+# 无权限提示
+no-permission: "§c你没有权限执行此操作。"
+
+# 重载配置成功提示
+reload-success: "§a配置已成功重载！"

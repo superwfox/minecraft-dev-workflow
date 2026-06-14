@@ -1,0 +1,16 @@
+name: CopperSword
+version: 1.0.0
+main: com.example.coppersword.Main
+api-version: 1.21
+
+commands:
+  coppersword:
+    description: Main command for CopperSword plugin
+    usage: /coppersword <subcommand>
+    permission: coppersword.command
+
+permissions:
+  coppersword.command:
+    description: Allows use of /coppersword command
+    default: true
+author: "§eTAHAI§r"
