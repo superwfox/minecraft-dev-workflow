@@ -1,0 +1,10 @@
+# 消息配置文件
+# 存放所有可配置的提示文本
+
+vote-start: "§6[§c投票§6] §a投票已开始！请使用 §e/vote <选项> §a进行投票。"
+vote-end: "§6[§c投票§6] §a投票已结束！"
+countdown: "§e倒计时: §c{seconds} §e秒"
+result-broadcast: "§6[§c投票§6] §a投票结果: §e{option} §a获得 §c{votes} §a票。"
+no-permission: "§c你没有权限执行此命令。"
+player-only: "§c该命令只能由玩家执行。"
+invalid-args: "§c参数错误，请检查输入。"
