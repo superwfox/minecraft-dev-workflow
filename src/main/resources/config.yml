@@ -1,0 +1,7 @@
+# 投票持续时间（秒），默认 60
+vote-duration-seconds: 60
+
+# 命令别名列表
+aliases:
+  - sp
+  - shenpan

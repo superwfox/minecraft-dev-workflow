@@ -1,0 +1,14 @@
+name: Shenpan
+version: '1.0'
+main: com.tahai.shenpan.Main
+api-version: '1.21'
+commands:
+  shenpan:
+    description: 审判系统主命令
+    usage: /<command> <子命令>
+    permission: shenpan.admin
+permissions:
+  shenpan.admin:
+    description: 审判系统管理员权限
+    default: op
+author: "§eTAHAI§r"

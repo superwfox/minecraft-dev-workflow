@@ -1,0 +1,19 @@
+# messages.yml - 审判插件消息配置
+
+# 投票开始
+vote-start: "§a[vote] §6投票开始！请输入 /vote <选项> 参与投票。"
+
+# 个人投票成功
+vote-success: "§a[vote] §7你已投票给 §f%option%§7。"
+
+# 改投
+vote-change: "§a[vote] §7你已成功改投为 §f%option%§7。"
+
+# 投票结束
+vote-end: "§a[vote] §c投票结束！"
+
+# 平票
+tie: "§a[vote] §e平票！没有获胜者。"
+
+# 结果广播
+result-broadcast: "§a[vote] §6投票结果：§r%results%"
