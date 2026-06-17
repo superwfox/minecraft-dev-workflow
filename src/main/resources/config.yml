@@ -1,0 +1,18 @@
+# 配置
+# 消息文本（可自定义，使用§颜色代码）
+messages:
+  prefix: "§6[审判]§r "
+  no-permission: "§c你没有权限使用此命令。"
+  vote-start: "§a投票已开始！"
+  vote-end: "§c投票已结束。"
+  vote-already: "§e你已经在进行投票了。"
+  player-not-found: "§c未找到指定玩家。"
+  vote-success: "§a你的投票已提交。"
+  vote-cancelled: "§e投票已被取消。"
+  invalid-usage: "§c用法错误，请检查命令语法。"
+
+# 投票持续时间（秒）
+vote-duration: 60
+
+# 日志文件名（保存在插件数据文件夹内）
+log-file: "shenpan.log"
