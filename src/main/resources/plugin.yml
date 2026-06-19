@@ -1,0 +1,13 @@
+name: BackpackBan
+version: 1.0
+main: com.tahai.backpackban.Main
+api-version: 1.21
+commands:
+  backpackban:
+    description: 管理 BackpackBan 插件
+    permission: backpackban.command
+permissions:
+  backpackban.command:
+    description: 允许使用 /backpackban 命令
+    default: op
+author: "§eTAHAI§r"
