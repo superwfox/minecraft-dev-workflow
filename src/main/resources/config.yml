@@ -1,0 +1,10 @@
+# 消息配置
+messages:
+  # 使用南瓜派成功时的提示
+  pie-use-success: "§a你吃了一个南瓜派，获得了饱腹感！"
+  # 使用南瓜派冷却中的提示
+  pie-cooldown: "§c你还在冷却中，请稍后再使用！"
+  # 无权限提示
+  no-permission: "§c你没有权限执行此命令！"
+  # 版本信息提示，{version} 会被替换为插件版本
+  version-info: "§6NgPumpkinPie §e版本 §a{version}"

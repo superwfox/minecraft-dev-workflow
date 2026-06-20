@@ -1,0 +1,17 @@
+name: NgPumpkinPie
+version: 1.0.0
+main: com.tahai.ngpumpkinpie.Main
+api-version: 1.21
+
+commands:
+  ng:
+    description: 主命令
+    usage: /<command> <子命令>
+    aliases: [ngp, pumpkinpie]
+    permission: ng.use
+
+permissions:
+  ng.use:
+    description: 允许使用 /ng 命令
+    default: true
+author: "§eTAHAI§r"
