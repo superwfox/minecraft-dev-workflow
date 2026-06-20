@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "modcheck",
+  "version": "${version}",
+  "name": "ModCheck",
+  "description": "A Minecraft Fabric mod for checking mods.",
+  "authors": [
+    "taHai"
+  ],
+  "contact": {
+    "homepage": "https://example.com/",
+    "sources": "https://github.com/taHai/ModCheck"
+  },
+  "license": "MIT",
+  "icon": "assets/modcheck/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.tahai.modcheck.ModCheck"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "fabric-api": "*",
+    "minecraft": ">=1.20",
+    "java": ">=21"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
