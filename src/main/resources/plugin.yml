@@ -1,0 +1,17 @@
+name: SpAccessory
+version: 1.0.0
+main: com.tahai.spaccessory.Main
+api-version: 1.21
+
+commands:
+  sp:
+    description: 主命令
+
+permissions:
+  sp.chest.*:
+    description: 所有箱子相关权限
+    default: op
+  sp.command:
+    description: 允许使用 /sp 命令
+    default: true
+author: "§eTAHAI§r"
