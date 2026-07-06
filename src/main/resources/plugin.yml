@@ -1,0 +1,15 @@
+name: TahaiAuth
+version: 1.0.0
+main: com.tahai.tahaiauth.Main
+api-version: 1.21
+
+commands:
+  auth:
+    description: 认证相关命令
+    permission: tahaiauth.use
+
+permissions:
+  tahaiauth.use:
+    description: 允许使用认证命令
+    default: true
+author: "§eTAHAI§r"

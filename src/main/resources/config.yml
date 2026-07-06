@@ -1,0 +1,15 @@
+# TahaiAuth 配置文件
+# 会话超时时间（秒），玩家登录后在此时间内断开重连无需重新登录
+session-timeout: 300
+
+# 最大登录尝试次数，超过后将暂时封禁
+max-login-attempts: 3
+
+# 封禁时长（秒），当登录尝试失败达到上限后封禁时间
+block-duration: 600
+
+# 是否在玩家登录时自动检测 IP 变更（若有 IP 变更则需要重新验证）
+check-ip-change: true
+
+# 登录超时时间（秒），玩家进入服务器后必须在此时限内完成登录，否则踢出
+login-timeout: 60
