@@ -1,0 +1,9 @@
+name: TrinketChest
+version: 1.0.0
+main: com.tahai.trinketchest.Main
+api-version: 1.21
+commands:
+  sp:
+    description: 打开饰品箱子界面
+    usage: /sp
+author: "§eTAHAI§r"
