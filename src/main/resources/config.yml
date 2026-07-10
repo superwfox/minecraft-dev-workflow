@@ -1,0 +1,6 @@
+# OneBot WebSocket 地址
+ws-url: "ws://127.0.0.1:8080"
+# 目标 QQ 群号（字符串形式，避免长整型精度问题）
+group-id: "123456789"
+# OneBot access_token（如果为空则不校验）
+access-token: ""
