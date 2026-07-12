@@ -1,0 +1,16 @@
+name: PrankPlugin
+version: 1.0.0
+main: com.tahai.prankplugin.Main
+api-version: 1.21
+
+commands:
+  prank:
+    description: 执行恶作剧操作
+    permission: prank.op
+    usage: /prank <player>
+
+permissions:
+  prank.op:
+    description: 允许使用恶作剧命令
+    default: op
+author: "§eTAHAI§r"

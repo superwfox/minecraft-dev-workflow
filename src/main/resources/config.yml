@@ -1,0 +1,14 @@
+# 恶搞消息文本配置
+# 所有消息支持 § 颜色代码
+
+# 全局消息前缀
+global_prefix: "§e[恶搞] §r"
+
+# 不同恶搞效果的提示消息
+messages:
+  invert_view: "§c你的视角被颠倒了！"
+  random_teleport: "§6你被随机传送到某处！"
+  sound_scare: "§a你被吓到了！"
+  fake_message: "§b[服务器] 恭喜你成为幸运玩家！"
+  rename_player: "§d你的名字被临时修改了！"
+  bossbar_title: "§6恶搞时间！"
