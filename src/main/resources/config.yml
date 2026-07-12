@@ -1,0 +1,12 @@
+# ====================
+# WhiteListVerify 插件配置文件
+# ====================
+
+# OneBot WebSocket 正向连接地址 (ws:// 或 wss://)
+ws-url: "ws://127.0.0.1:8080"
+
+# 目标 QQ 群号（仅处理该群消息）
+group-id: "123456789"
+
+# OneBot access_token（可选，为空则不使用）
+access-token: ""
