@@ -1,0 +1,8 @@
+# OneBot WebSocket 地址，格式 ws://ip:port
+ws-url: "ws://127.0.0.1:8080"
+
+# 目标 QQ 群号（接收群消息和发送群消息）
+group-id: "123456789"
+
+# access_token，用于 WebSocket 连接鉴权（若无留空）
+access-token: ""
