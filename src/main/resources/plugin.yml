@@ -1,0 +1,6 @@
+name: CustomHUD
+version: 1.0.0
+main: com.tahai.customhud.Main
+api-version: 1.21
+softdepend: [PlaceholderAPI, Nexo]
+author: "§eTAHAI§r"

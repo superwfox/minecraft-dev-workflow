@@ -1,0 +1,15 @@
+# HUD template text, supports PlaceholderAPI placeholders and color codes (§)
+hud-template:
+  line1: "§eServer: %player_name%"
+  line2: "§bTPS: §7%server_tps_1%"
+  line3: "§bPing: §7%player_ping%"
+
+# Horizontal position: left, center, right
+hud-horizontal: right
+
+# Vertical position: top, center, bottom
+hud-vertical: top
+
+# Custom font namespace definition (used for resource packs that provide custom fonts)
+# Set to empty to use default Minecraft font
+custom-font: ""
