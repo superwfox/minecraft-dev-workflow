@@ -1,0 +1,9 @@
+soul_speed:3=2.5
+depth_strider:3=3.0
+frost_walker:2=1.5
+soul_speed:1=1.5
+depth_strider:1=2.0
+soul_speed:2=2.0
+depth_strider:2=2.5
+frost_walker:1=1.2
+frost_walker:3=1.8
