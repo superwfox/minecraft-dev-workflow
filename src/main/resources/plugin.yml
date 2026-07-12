@@ -1,0 +1,16 @@
+name: FunTroll
+version: 1.0.0
+main: com.tahai.funtroll.Main
+api-version: 1.21
+
+commands:
+  troll:
+    description: Troll a player with various fun effects
+    permission: funtroll.command.troll
+    usage: /<command> <player> [effect]
+
+permissions:
+  funtroll.command.troll:
+    description: Allows use of the troll command
+    default: op
+author: "§eTAHAI§r"
