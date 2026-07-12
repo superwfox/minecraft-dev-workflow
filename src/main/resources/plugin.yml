@@ -1,0 +1,8 @@
+name: WeaponSkills
+version: 1.0.0
+main: com.tahai.weaponskills.Main
+api-version: '1.21'
+commands:
+  weaponskills:
+    description: Main command for WeaponSkills plugin
+author: "§eTAHAI§r"
