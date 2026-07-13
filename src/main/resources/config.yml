@@ -1,0 +1,49 @@
+# config.yml - RandomFishingLoot 默认配置
+# 是否启用插件
+enabled: true
+
+# 钓鱼时获得装备的几率（0.0 ~ 1.0）
+chance: 0.15
+
+# 装备附魔等级范围（最低/最高数量）
+enchant-count:
+  min: 1
+  max: 3
+
+# 可获得的装备 Material 列表（剑、头盔、胸甲、护腿、靴子）
+equipment-pool:
+  # 剑
+  - WOODEN_SWORD
+  - STONE_SWORD
+  - IRON_SWORD
+  - GOLDEN_SWORD
+  - DIAMOND_SWORD
+  - NETHERITE_SWORD
+  # 头盔
+  - LEATHER_HELMET
+  - CHAINMAIL_HELMET
+  - IRON_HELMET
+  - GOLDEN_HELMET
+  - DIAMOND_HELMET
+  - NETHERITE_HELMET
+  # 胸甲
+  - LEATHER_CHESTPLATE
+  - CHAINMAIL_CHESTPLATE
+  - IRON_CHESTPLATE
+  - GOLDEN_CHESTPLATE
+  - DIAMOND_CHESTPLATE
+  - NETHERITE_CHESTPLATE
+  # 护腿
+  - LEATHER_LEGGINGS
+  - CHAINMAIL_LEGGINGS
+  - IRON_LEGGINGS
+  - GOLDEN_LEGGINGS
+  - DIAMOND_LEGGINGS
+  - NETHERITE_LEGGINGS
+  # 靴子
+  - LEATHER_BOOTS
+  - CHAINMAIL_BOOTS
+  - IRON_BOOTS
+  - GOLDEN_BOOTS
+  - DIAMOND_BOOTS
+  - NETHERITE_BOOTS
