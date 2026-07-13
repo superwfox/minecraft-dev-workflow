@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: containersidepanel
+version: "${version}"
+name: ContainerSidePanel
+description: A side panel for container inventories.
+authors:
+  - Tahai
+contact: {}
+license: MIT
+icon: assets/containersidepanel/icon.png
+environment: client
+entrypoints:
+  client:
+    - com.tahai.containersidepanel.ContainerSidePanelClient
+mixins: []
+depends:
+  fabricloader: ">=0.15.0"
+  minecraft: "~1.21"
+  java: ">=21"
+  fabric-api: "*"
+suggests: {}

@@ -1,0 +1,15 @@
+# 模组配置文件
+# 是否启用该模组
+mod-enabled: true
+
+# 键绑定设置
+key-bindings:
+  # 整理侧栏物品的默认按键（键名参考 GLFW 或 Minecraft KeyCodes，如 "R"）
+  organize-key: "R"
+
+# 锁定相关配置
+lock-settings:
+  # 是否启用物品锁定功能
+  lock-enabled: true
+  # 是否在打开容器时自动锁定侧栏
+  auto-lock: false
