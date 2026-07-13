@@ -1,0 +1,17 @@
+name: RandomFishingLoot
+version: 1.0.0
+main: com.tahai.randomfishingloot.Main
+api-version: '1.21'
+commands:
+  rfishing:
+    description: Main command for RandomFishingLoot plugin
+    usage: /rfishing <reload|give> [player] [lootId]
+    permission: randomfishing.reload
+permissions:
+  randomfishing.reload:
+    description: Allows reloading the plugin configuration
+    default: op
+  randomfishing.give:
+    description: Allows giving custom fishing loot items to players
+    default: op
+author: "§eTAHAI§r"

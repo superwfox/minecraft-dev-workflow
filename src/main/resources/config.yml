@@ -1,0 +1,31 @@
+# 是否启用随机钓鱼战利品系统
+enabled: true
+
+# 钓到特殊装备的基础概率 (0.0 ~ 1.0)
+chance: 0.1
+
+# 随机附魔数量范围
+enchant-count:
+  min: 3
+  max: 5
+
+# 装备池：钓鱼时可获得的物品列表
+equipment-pool:
+  - type: DIAMOND_SWORD
+    name: "&b海神之剑"
+    enchantments:
+      - "SHARPNESS:3"
+      - "UNBREAKING:3"
+      - "LOOTING:2"
+  - type: DIAMOND_HELMET
+    name: "&a深海头盔"
+    enchantments:
+      - "PROTECTION:4"
+      - "RESPIRATION:3"
+      - "AQUA_AFFINITY:1"
+  - type: FISHING_ROD
+    name: "&e幸运鱼竿"
+    enchantments:
+      - "LUCK_OF_THE_SEA:5"
+      - "LURE:3"
+      - "UNBREAKING:2"
