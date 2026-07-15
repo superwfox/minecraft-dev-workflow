@@ -1,0 +1,12 @@
+# WebSocket 连接地址，格式 ws://ip:port
+WsUrl: "ws://127.0.0.1:8080"
+
+# 目标 QQ 群号
+GroupId: ""
+
+# OneBot 访问令牌（access_token），留空表示不需要
+AccessToken: ""
+
+# 管理员 QQ 号列表，可配置多个
+AdminQqs:
+  - ""
