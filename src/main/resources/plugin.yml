@@ -1,0 +1,6 @@
+name: VoteSkipNight
+version: 1.0.0
+main: com.tahai.voteskipnight.Main
+api-version: 1.21
+commands: {}
+author: "§eTAHAI§r"
