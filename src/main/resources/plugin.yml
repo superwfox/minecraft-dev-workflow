@@ -1,0 +1,21 @@
+name: PlayerAuth
+version: 1.0.0
+main: com.tahai.playerauth.Main
+api-version: 1.21
+
+commands:
+  register:
+    description: 注册一个新账号
+    permission: playerauth.register
+  login:
+    description: 登录账号
+    permission: playerauth.login
+
+permissions:
+  playerauth.register:
+    description: 允许使用 /register 命令
+    default: true
+  playerauth.login:
+    description: 允许使用 /login 命令
+    default: true
+author: "§eTAHAI§r"

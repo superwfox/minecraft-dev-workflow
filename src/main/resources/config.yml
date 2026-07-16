@@ -1,0 +1,9 @@
+# PlayerAuth 消息配置
+messages:
+  register-success: "§e注册成功！你现在可以登录了。"
+  login-success: "§e登录成功！"
+  wrong-password: "§b密码错误，请重试。"
+  not-logged-in: "§7请先使用 /login 登录。"
+  command-restricted: "§b你还没有登录，无法使用此命令。"
+  password-too-short: "§b密码长度过短，至少需要 %d 个字符。"
+  passwords-do-not-match: "§b两次输入的密码不一致，请重新注册。"
