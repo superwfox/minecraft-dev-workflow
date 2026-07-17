@@ -1,0 +1,6 @@
+name: HealthAdjuster
+version: 1.0.0
+main: com.tahai.healthadjuster.Main
+api-version: 1.20
+depend: [BedWars1058]
+author: "§eTAHAI§r"
