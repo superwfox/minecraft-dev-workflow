@@ -1,0 +1,15 @@
+# 允许拾取的实体类型列表（使用命名空间ID）
+allowed-entities:
+  - minecraft:zombie
+  - minecraft:skeleton
+  - minecraft:creeper
+  - minecraft:spider
+  - minecraft:enderman
+
+# 允许拾取的方块类型列表（使用命名空间ID）
+allowed-blocks:
+  - minecraft:stone
+  - minecraft:dirt
+  - minecraft:grass_block
+  - minecraft:oak_log
+  - minecraft:cobblestone
