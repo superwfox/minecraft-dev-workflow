@@ -1,0 +1,13 @@
+name: Qinglong
+version: 1.0.0
+main: com.tahai.qinglong.Main
+api-version: 1.21
+commands:
+  qinglong:
+    description: 主命令
+    permission: qinglong.use
+permissions:
+  qinglong.use:
+    description: 允许使用 /qinglong 命令
+    default: true
+author: "§eTAHAI§r"

@@ -1,0 +1,67 @@
+maps:
+  - key: "world"
+    display-name: "主世界"
+    lore:
+      - "这是一个主世界地图"
+    world: "world"
+    spawn-point:
+      world: "world"
+      x: 0.0
+      y: 64.0
+      z: 0.0
+      yaw: 0.0
+      pitch: 0.0
+    cross-server-command: "mvtp {player} world"
+
+animals:
+  - key: "dragon"
+    display-name: "龙"
+    lore:
+      - "传说中的龙"
+    scale: 1.5
+    equipment:
+      helmet: "DIAMOND_HELMET"
+      chestplate: "DIAMOND_CHESTPLATE"
+      leggings: "DIAMOND_LEGGINGS"
+      boots: "DIAMOND_BOOTS"
+      offhand: "SHIELD"
+      hotbar:
+        - "STONE_SWORD"
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+      inventory:
+        - null
+        # ... 27个物品，全null
+    skills:
+      - trigger: "on_attack"
+        particle: "FLAME"
+        damage: 20.0
+        effect:
+          type: "SLOWNESS"
+          duration: 100
+          amplifier: 1
+    unlock-level: 10
+    equipment-upgrade:
+      - level: 20
+        slot: "helmet"
+        item: "NETHERITE_HELMET"
+
+level-experience:
+  - level: 1
+    experience: 0
+  - level: 2
+    experience: 100
+  - level: 3
+    experience: 300
+  # 更多级别...
+
+experience-formula:
+  base: 100
+  multiplier: 1.5
+  exponent: 2.0
