@@ -1,0 +1,45 @@
+# 管理GUI标题
+admin-gui-title: "§7抽奖系统管理"
+
+# 编辑GUI标题
+edit-gui-title: "§7编辑抽奖配置"
+
+# 编辑GUI按钮文本
+edit-gui-save: "§e保存"
+edit-gui-exit: "§e退出"
+
+# 抽奖箱选择GUI标题
+box-select-gui-title: "§7选择抽奖箱"
+
+# 开箱结果消息 - %rewards% 会被替换为奖励列表
+lottery-result-message: "§e你获得了：%rewards%"
+
+# 钥匙无效提示
+invalid-key-message: "§b钥匙无效或已使用"
+
+# 概率输入引导
+probability-input-prompt: "§e请输入奖励概率（0-100，保留两位小数）："
+
+# 无权限提示
+no-permission-message: "§7你没有权限执行此命令"
+
+# 控制台不能使用命令提示
+console-only-command: "§7此命令只能由玩家执行"
+
+# 目标不是箱子提示
+not-a-chest-message: "§7请对准一个箱子"
+
+# 重载成功提示
+reload-success: "§e配置已重载"
+
+# 箱子已注册为抽奖箱提示
+chest-registered: "§e该箱子已注册为抽奖箱"
+
+# 箱子未注册提示
+chest-not-registered: "§7该箱子未注册为抽奖箱"
+
+# 箱子已取消注册提示
+chest-unregistered: "§e已取消注册"
+
+# 操作成功通用提示
+operation-success: "§e操作成功"

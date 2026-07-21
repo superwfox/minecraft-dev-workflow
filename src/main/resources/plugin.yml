@@ -1,0 +1,13 @@
+name: Lottery
+version: 1.0.0
+main: com.tahai.lottery.Main
+api-version: 1.21
+commands:
+  lotto:
+    description: Run lottery commands
+    permission: lottery.admin
+permissions:
+  lottery.admin:
+    description: Access to /lotto command
+    default: op
+author: "§eTAHAI§r"
