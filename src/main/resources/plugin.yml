@@ -1,0 +1,19 @@
+name: CobblemonBoss
+version: 1.0.0
+main: com.tahai.cobblemonboss.Main
+api-version: 1.21
+depend:
+  - Cobblemon
+
+commands:
+  boss:
+    description: 主命令，用于管理Boss相关功能
+    usage: /<command> [子命令] [参数]
+    aliases: [bosses]
+    permission: boss.cmd
+
+permissions:
+  boss.cmd:
+    description: 允许使用/boss命令
+    default: true
+author: "§eTAHAI§r"
