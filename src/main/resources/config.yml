@@ -1,0 +1,73 @@
+# BOSS 定义列表
+# 每个 BOSS 是一个列表项，包含完整配置项
+bosses:
+  # 示例 BOSS - 闪电鸟
+  - bossId: "zapdos"
+    pokemon: "zapdos"                      # 宝可梦种类 (PokeAPI 或 Cobblemon 内部名称)
+    displayName: "§e传说中的闪电鸟"           # 显示名称 (支持 § 颜色码)
+    health: 500.0                          # 生命值
+    attack: 30.0                           # 基础攻击力
+    loot:                                  # 击败后掉落物 (物品命名ID, 支持模组物品)
+      - "minecraft:diamond"
+      - "cobblemon:rare_candy"
+      - "cobblemon:thunder_stone"
+    minIVs: 5                              # 最小个体 V 数 (IV 值)
+    aggroRange: 16.0                       # 仇恨范围 (方块)
+    deaggroRange: 32.0                     # 脱战范围 (方块)
+    attackType: "ranged"                   # 攻击类型: "melee" 或 "ranged"
+    attackRange: 8.0                       # 攻击范围 (方块)
+    speed: 0.35                            # 移动速度 (0~1 比例)
+    projectile: "minecraft:arrow"          # 远程投射物 (仅 attackType=ranged 时有效)
+    projectileEffects:                     # 投射物附加药水效果 (支持爆炸)
+      - type: "minecraft:instant_damage"
+        duration: 20                       # 效果持续时间 (tick)
+        amplifier: 1                       # 等级 (0 为 I 级)
+      - type: "minecraft:explosion"        # 特殊效果: 爆炸 (非药水效果, 由插件自行处理)
+        power: 2.0                         # 爆炸威力
+    title:                                 # 进入战斗时 Title 消息 (可选)
+      title: "§e§l⚡ 闪电鸟 ⚡"
+      subtitle: "§e你被传说宝可梦盯上了！"
+      fadeIn: 10                           # 淡入时间 (tick)
+      stay: 40                             # 停留时间
+      fadeOut: 10                          # 淡出时间
+
+  # 示例 BOSS - 喷火龙
+  - bossId: "charizard"
+    pokemon: "charizard"
+    displayName: "§e炎帝喷火龙"
+    health: 800.0
+    attack: 45.0
+    loot:
+      - "minecraft:netherite_ingot"
+      - "cobblemon:fire_stone"
+      - "cobblemon:max_revive"
+    minIVs: 4
+    aggroRange: 20.0
+    deaggroRange: 40.0
+    attackType: "melee"                    # 近战 BOSS
+    attackRange: 4.0
+    speed: 0.4
+    projectile: ""                         # 近战无需投射物
+    projectileEffects: []
+    title:
+      title: "§e§l🔥 喷火龙 🔥"
+      subtitle: "§e灼热的烈焰正在逼近！"
+      fadeIn: 10
+      stay: 50
+      fadeOut: 10
+
+# 全局消息提示 (使用 § 颜色码)
+# 玩家可直接见到的消息请避免使用 ANSI 代码, 使用 § 颜色代码
+messages:
+  enterBattle: "§e§l⚔ 进入战斗！ ⚔"           # 进入战斗时的标题/动作条消息
+  bossSpawn: "§e{0} §7已在 {1} 处生成！"    # BOSS 生成广播 {0}=显示名, {1}=坐标
+  bossKilled: "§e成功击败了 §e{0}！"          # BOSS 被击杀广播
+  bossDespawned: "§7BOSS §e{0} §7已脱战消失。"  # BOSS 脱战消失
+  invalidBossId: "§b指定 BOSS ID 不存在。"       # 命令中无效 BOSS ID
+  noPermission: "§b你没有权限执行此命令。"        # 权限不足
+  reloadComplete: "§e配置文件已重载。"            # /cobbleboss reload 成功
+  reloadError: "§b重载配置文件时发生错误。"        # 重载失败
+  addTaskSuccess: "§e已添加生成任务: §e{0}"      # 添加定时任务成功
+  addTaskError: "§b添加任务失败, 请检查参数。"     # 添加任务参数错误
+  spawnNow: "§7正在生成 BOSS: §e{0}"            # 手动生成 BOSS (执行 /cb spawn)
+  usage: "§7用法: /cobbleboss <spawn|reload|addtask>"  # 命令用法提示

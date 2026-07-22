@@ -1,0 +1,16 @@
+name: CobbleBoss
+version: 1.0.0
+main: com.tahai.cobbleboss.Main
+api-version: 1.21
+
+commands:
+  cobbleboss:
+    description: Main command for CobbleBoss plugin
+    aliases: [cb]
+    permission: cobblemonboss.admin
+
+permissions:
+  cobblemonboss.admin:
+    description: Allows use of cobbleboss commands
+    default: op
+author: "§eTAHAI§r"
