@@ -1,0 +1,49 @@
+# 世界列表：仅在这些世界中玩家可使用 /xn 命令发起挑战
+allowed-worlds:
+  - world
+
+# 两次挑战之间的冷却时间（秒）
+cooldown-seconds: 60
+
+# 波次配置：按顺序执行，wave-1、wave-2 等
+waves:
+  wave-1:
+    # 生成模式：INSTANT - 波次开始时立即生成所有怪物；THRESHOLD - 需上波怪物死亡数量达到阈值才触发此波
+    spawn-mode: INSTANT
+    # 怪物列表
+    monsters:
+      - mythicmob-id: "ZombieKing"
+        amount: 5
+      - mythicmob-id: "SkeletonArcher"
+        amount: 3
+  wave-2:
+    spawn-mode: THRESHOLD
+    # 触发阈值：上波怪物死亡数量达到此百分比（0-100）后触发此波
+    threshold: 80
+    monsters:
+      - mythicmob-id: "WitherSkeleton"
+        amount: 4
+      - mythicmob-id: "Blaze"
+        amount: 2
+  wave-3:
+    spawn-mode: INSTANT
+    monsters:
+      - mythicmob-id: "EnderDragon_Boss"
+        amount: 1
+
+# 奖励配置：挑战完成后发放
+rewards:
+  # Vault 经济金额（需要 Vault 插件）
+  vault-money: 100.0
+  # 给予玩家的物品（物品名称为 Bukkit Material 名称，数量为 stack 数量）
+  items:
+    - material: DIAMOND
+      amount: 1
+    - material: NETHERITE_INGOT
+      amount: 2
+  # 执行的控制台命令（%player% 会被替换为玩家名）
+  commands:
+    - "give %player% minecraft:elytra 1"
+    - "broadcast §e%player% 完成了挑战！"
+  # 直接给予经验等级
+  experience-levels: 10

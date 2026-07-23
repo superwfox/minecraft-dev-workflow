@@ -1,0 +1,9 @@
+name: XnChallenge
+version: 1.0.0
+main: com.tahai.xnchallenge.Main
+api-version: 1.21
+softdepend: [MythicMobs, Vault, PlaceholderAPI]
+commands:
+  xn:
+    description: Main command for XnChallenge
+author: "§eTAHAI§r"
