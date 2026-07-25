@@ -1,0 +1,14 @@
+name: Baoshi
+version: 1.0.0
+main: com.tahai.baoshi.Main
+api-version: 1.12.2
+
+commands:
+  gem:
+    description: 宝石系统主命令
+
+permissions:
+  baoshi.admin:
+    description: 管理宝石系统的权限
+    default: op
+author: "§eTAHAI§r"

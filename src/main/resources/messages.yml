@@ -1,0 +1,10 @@
+# 镶嵌成功消息
+gem-embed-success: "§e宝石镶嵌成功！"
+# 镶嵌失败消息
+gem-embed-fail: "§b宝石镶嵌失败！"
+# 升级成功消息
+gem-upgrade-success: "§e宝石升级成功！"
+# 材料不足消息
+insufficient-materials: "§7材料不足，无法进行该操作。"
+# 无权限消息
+no-permission: "§7你没有权限执行此操作。"
