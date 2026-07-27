@@ -1,0 +1,18 @@
+# 矿物回收价格表（物品材质名称，大写）
+prices:
+  DIAMOND: 100
+  NETHERITE_INGOT: 500
+  STONE: 20
+  IRON_INGOT: 50
+  GOLD_INGOT: 50
+  COPPER_INGOT: 50
+
+# 命令别名列表（仅用于 /hs recycle 的自动补全）
+aliases:
+  - recycle
+
+# 无回收物品时的消息（§7 灰色）
+no-recycle-message: "§7你身上没有可回收的物品。"
+
+# 成功回收时的消息，%amount% 替换为物品数量，%total_gold% 替换为总金币数（§e 黄色）
+success-message: "§e成功回收了 %amount% 个物品，获得 %total_gold% 金币。"
