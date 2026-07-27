@@ -1,0 +1,29 @@
+# 兑换档位配置
+# 可添加多个档位，每个档位包含所需金币(gold)和兑换获得点券(points)
+tiers:
+  - gold: 100
+    points: 10
+  - gold: 500
+    points: 55
+  - gold: 1000
+    points: 120
+  - gold: 5000
+    points: 650
+
+# 菜单标题（支持 § 颜色代码，运行时自动转换）
+menu-header: "§e§l金币兑换点券"
+
+# 菜单中每个档位物品的显示名称（%gold% 和 %points% 会被替换为实际数值）
+menu-item: "§7兑换 §e%gold% 金币 §7→ §e%points% 点券"
+
+# 输入无效提示（玩家输入非数字或没有对应档位时显示）
+invalid-input: "§b输入格式错误，请使用 /hh <数字> 选择档位编号"
+
+# 金币不足提示
+gold-insufficient: "§b你的金币不足，需要 %gold% 金币，实际只有 %balance%"
+
+# 成功兑换提示（%player_name% 和 PlaceholderAPI 占位符可用）
+success-message: "§e成功消耗 %gold% 金币，获得 %points% 点券！当前余额: %balance%"
+
+# 其他可自定义消息（可根据需要扩展）
+# 注意：所有消息均支持 %player_name% 以及 PlaceholderAPI 扩展的任意占位符

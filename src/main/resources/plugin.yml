@@ -1,0 +1,13 @@
+name: hh
+version: 1.0.0
+main: com.tahai.hh.Main
+api-version: "1.21"
+depend:
+  - Vault
+  - PlayerPoints
+softdepend:
+  - PlaceholderAPI
+commands:
+  hh:
+    description: 金币兑换点券菜单
+author: "§eTAHAI§r"
