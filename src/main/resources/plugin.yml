@@ -1,0 +1,10 @@
+name: Hh
+version: 1.0.0
+main: com.tahai.hh.Main
+api-version: 1.21
+depend: [Vault, PlayerPoints]
+softdepend: [PlaceholderAPI]
+commands:
+  hh:
+    description: Main command for Hh
+author: "§eTAHAI§r"
