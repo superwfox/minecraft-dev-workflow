@@ -1,0 +1,16 @@
+name: Kuangqu
+version: 1.0.0
+main: com.tahai.kuangqu.Main
+api-version: 1.21
+
+commands:
+  kq:
+    description: 主命令
+    permission: kuangqu.admin
+    usage: /kq <addtask|...>
+
+permissions:
+  kuangqu.admin:
+    description: 管理员权限
+    default: op
+author: "§eTAHAI§r"
