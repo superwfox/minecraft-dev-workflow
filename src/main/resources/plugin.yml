@@ -1,0 +1,14 @@
+name: WqlTab
+version: 1.0.0
+main: com.tahai.wqltab.Main
+api-version: 1.21
+softdepend: [PlaceholderAPI, Vault]
+commands:
+  wqltab:
+    description: 重载插件配置
+    permission: wqltab.reload
+permissions:
+  wqltab.reload:
+    description: 允许重载 WqlTab 插件
+    default: op
+author: "§eTAHAI§r"

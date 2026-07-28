@@ -1,0 +1,31 @@
+# 配置文件: WqlTab 插件配置
+# 支持使用 § 颜色代码（例如 §e=黄色, §b=浅蓝, §7=灰色）
+# 占位符: 使用 %placeholder% 格式，例如 %player_name%, %vault_eco_balance%
+
+# TAB 列表配置
+tab:
+  # 列表上方显示的多行文本 (支持占位符)
+  header:
+    - "§e欢迎来到服务器 §7%player_name%"
+    - "§7在线玩家: §e%online_players%"
+
+  # 列表下方显示的多行文本
+  footer:
+    - "§7服务器时间: §e%server_time%"
+    - "§7使用 /help 查看帮助"
+
+# 计分板配置 (右侧侧边栏)
+scoreboard:
+  # 是否启用计分板
+  enabled: true
+
+  # 计分板标题 (支持占位符)
+  title: "§e§l我的服务器"
+
+  # 计分板行 (从上到下最多15行, 支持占位符)
+  lines:
+    - "§7玩家: §f%player_name%"
+    - "§7金币: §e%vault_eco_balance%"
+    - "§7在线: §f%online_players%"
+    - "§7Ping: §f%player_ping%"
+    - "§7世界: %player_world%"
