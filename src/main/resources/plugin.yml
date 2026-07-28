@@ -1,0 +1,23 @@
+name: Kuangqu
+version: 1.0
+main: com.tahai.kuangqu.Main
+api-version: 1.21
+softdepend:
+  - PlaceholderAPI
+  - WorldGuard
+commands:
+  kq:
+    description: 矿区管理
+    usage: /kq <create|reload>
+    permission: kq.qx.use
+permissions:
+  kq.qx.use:
+    description: 使用/kq命令的基础权限
+    default: op
+  kq.qx.create:
+    description: 创建矿区的权限
+    default: op
+  kq.qx.reload:
+    description: 重载配置的权限
+    default: op
+author: "§eTAHAI§r"

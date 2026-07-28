@@ -1,0 +1,36 @@
+# 矿区管理插件配置文件
+# 可在此文件中修改默认设置
+
+# 矿区列表
+zones:
+  - name: "example_zone"          # 矿区名称（唯一标识）
+    world: "world"                # 矿区所在世界
+    pos1:                         # 区域第一角坐标
+      x: 100
+      y: 60
+      z: 100
+    pos2:                         # 区域第二角坐标
+      x: 150
+      y: 80
+      z: 150
+    reset-interval: 600           # 重置间隔（秒），默认10分钟
+
+# 消息节点（支持 § 颜色代码）
+messages:
+  zone-created: "§e矿区 %s 已创建"
+  zone-reloaded: "§e配置文件已重载"
+  no-permission: "§b你没有权限执行此命令"
+  invalid-args: "§b参数错误，请使用 /kq create <名称> 或 /kq reload"
+  zone-not-found: "§b未找到名为 %s 的矿区"
+
+# 地形模板（用于矿区重置时填充和生成矿物）
+terrain:
+  fill-material: STONE             # 默认为石头
+  ore-distribution:                # 矿石权重（值越大出现概率越高）
+    COAL_ORE: 100
+    IRON_ORE: 60
+    GOLD_ORE: 30
+    LAPIS_ORE: 15
+    REDSTONE_ORE: 20
+    DIAMOND_ORE: 5
+    EMERALD_ORE: 2
