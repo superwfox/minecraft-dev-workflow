@@ -1,0 +1,15 @@
+name: MahjongPlugin
+version: 1.0.0
+main: com.tahai.mahjong.Main
+api-version: 1.21
+depend: [CraftEngine]
+
+commands:
+  mj:
+    description: Main command for MahjongPlugin
+
+permissions:
+  mjadmin.create:
+    description: Allows creating mahjong games
+    default: op
+author: "§eTAHAI§r"
