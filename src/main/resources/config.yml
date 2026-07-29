@@ -1,0 +1,23 @@
+# 计分板配置
+scoreboard:
+  # 计分板标题
+  title: "§e§l我的服务器"
+  # 计分板行列表（支持 PAPI 变量，如 %player_name%）
+  lines:
+    - ""
+    - "§7玩家: §f%player_name%"
+    - "§7在线: §f%server_online%"
+    - "§7余额: §f%vault_eco_balance%"
+    - ""
+    - "§e§l感谢游玩"
+
+# Tab 列表页眉和页脚配置
+tab:
+  # 页眉（多行列表，每行一个字符串，支持 PAPI 变量）
+  header:
+    - "§e§l我的服务器"
+    - "§7欢迎 %player_name%"
+  # 页脚（多行列表，每行一个字符串，支持 PAPI 变量）
+  footer:
+    - "§7在线: §f%server_online%"
+    - "§7TPS: §f%server_tps%"
