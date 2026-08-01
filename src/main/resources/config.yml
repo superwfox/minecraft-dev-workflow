@@ -1,0 +1,8 @@
+# 是否启用世界限制
+world-limit: true
+
+# 允许运行的默认世界（仅主世界）
+default-world: world
+
+# 数据文件名
+data-file: data.yml

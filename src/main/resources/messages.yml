@@ -1,0 +1,119 @@
+# ============================================
+# Sect 插件消息配置文件
+# 所有游戏内消息均可在此修改
+# 支持颜色代码 § 与 PlaceholderAPI 占位符
+# ============================================
+
+# ---------- 前缀 ----------
+prefix: "§7[§e宗门§7] "
+
+# ---------- 创建宗门 ----------
+sect:
+  create:
+    success: "%prefix%§e宗门创建成功！"
+    already-in-sect: "%prefix%§b你已经在宗门中了！"
+    name-exists: "%prefix%§b该宗门名称已被使用！"
+    name-invalid: "%prefix%§b宗门名称不合法！"
+    no-permission: "%prefix%§b你没有权限创建宗门！"
+    limit-reached: "%prefix%§b服务器宗门数量已达上限！"
+
+  # ---------- 邀请成员 ----------
+  invite:
+    sent: "%prefix%§e已向 §e§l%player%§e 发送宗门邀请！"
+    received: "%prefix%§e你收到来自 §e§l%sect%§e 的宗门邀请！"
+    target-not-online: "%prefix%§b该玩家不在线！"
+    target-already-in-sect: "%prefix%§b该玩家已在其他宗门！"
+    target-already-invited: "%prefix%§b该玩家已被邀请！"
+    no-permission: "%prefix%§b你没有权限邀请成员！"
+    full: "%prefix%§b宗门成员已满！"
+    expired: "%prefix%§b邀请已过期！"
+
+  # ---------- 加入宗门 ----------
+  join:
+    success: "%prefix%§e你已加入宗门 §e§l%sect%§e！"
+    member-joined: "%prefix%§e§l%player% §e加入了宗门！"
+    not-invited: "%prefix%§b你没有被邀请！"
+    already-in-sect: "%prefix%§b你已经在宗门中了！"
+
+  # ---------- 退出宗门 ----------
+  quit:
+    success: "%prefix%§e你已退出宗门！"
+    member-quit: "%prefix%§e§l%player% §e退出了宗门！"
+    not-in-sect: "%prefix%§b你不在任何宗门中！"
+    leader-cannot-quit: "%prefix%§b宗主请使用解散命令！"
+
+  # ---------- 解散宗门 ----------
+  disband:
+    success: "%prefix%§e宗门已解散！"
+    target-not-found: "%prefix%§b未找到目标宗门！"
+    target-disbanded: "%prefix%§e目标宗门已解散！"
+    too-many-members: "%prefix%§b宗门解散需要宗主权限！"
+    no-permission: "%prefix%§b只有宗主可以解散宗门！"
+    confirm: "%prefix%§e请再次输入确认解散！"
+
+  # ---------- 转移宗主 ----------
+  transfer:
+    success: "%prefix%§e已将宗主之位转让给 §e§l%player%§e！"
+    member-transferred: "%prefix%§e§l%player% §e成为了新的宗主！"
+    target-not-in-sect: "%prefix%§b该玩家不在你的宗门中！"
+    already-leader: "%prefix%§b该玩家已是宗主！"
+    no-permission: "%prefix%§b只有宗主可以转移职位！"
+
+  # ---------- 宗门升级 ----------
+  upgrade:
+    success: "%prefix%§e宗门升级成功！当前等级 §e§l%level%§e！"
+    already-max: "%prefix%§b宗门已达最高等级！"
+    not-enough-money: "%prefix%§b宗门资金不足！"
+    not-enough-members: "%prefix%§b宗门成员数量不足！"
+    no-permission: "%prefix%§b你没有权限升级宗门！"
+    requires-level: "%prefix%§b需要宗门等级达到 §b§l%level%§b！"
+
+  # ---------- 宗门战 ----------
+  war:
+    start: "%prefix%§e宗门战开始！"
+    end: "%prefix%§e宗门战结束！"
+    victory: "%prefix%§e你的宗门在战斗中获胜！"
+    defeat: "%prefix%§b你的宗门在战斗中失败！"
+    declared: "%prefix%§e已向宗门 §e§l%sect%§e 宣战！"
+    war-declared: "%prefix%§e宗门 §e§l%sect%§e 向你方宣战！"
+    not-in-war: "%prefix%§b当前没有宗门战！"
+    already-in-war: "%prefix%§b当前已在宗门战中！"
+    no-permission: "%prefix%§b你没有权限发起宗门战！"
+    target-not-found: "%prefix%§b未找到目标宗门！"
+    can-not-declare-self: "%prefix%§b不能向自己的宗门宣战！"
+    cooldown: "%prefix%§b宗门战冷却中，剩余 %time% 秒！"
+
+  # ---------- 宗门收益 ----------
+  benefit:
+    claimed: "%prefix%§e你已领取宗门收益！"
+    already-claimed: "%prefix%§b你今日已领取过收益！"
+    no-permission: "%prefix%§b你没有权限领取收益！"
+    not-in-sect: "%prefix%§b你不在任何宗门中！"
+    not-enough-level: "%prefix%§b宗门等级不足，无法领取收益！"
+
+  # ---------- 通用错误提示 ----------
+  error:
+    unknown-command: "%prefix%§b未知命令！请输入 §b§l/sect help §b查看帮助！"
+    no-permission: "%prefix%§b你没有权限执行此操作！"
+    not-in-sect: "%prefix%§b你不在任何宗门中！"
+    not-leader: "%prefix%§b只有宗主可以执行此操作！"
+    invalid-argument: "%prefix%§b参数错误！请输入 §b§l/sect help §b查看帮助！"
+    config-error: "%prefix%§b配置加载失败，请联系管理员！"
+    data-save-error: "%prefix%§b数据保存失败，请联系管理员！"
+    player-not-found: "%prefix%§b未找到玩家 %player%！"
+    internal-error: "%prefix%§b发生内部错误，请稍后再试！"
+
+  # ---------- 帮助菜单 ----------
+  help:
+    title: "§e========== §7宗门帮助 §e=========="
+    format: "§e/sect %command% §7- §f%description%"
+    create: "创建宗门"
+    invite: "邀请玩家加入宗门"
+    join: "加入宗门"
+    quit: "退出宗门"
+    disband: "解散宗门"
+    transfer: "转移宗主职位"
+    upgrade: "升级宗门"
+    war: "发起宗门战"
+    benefit: "领取宗门收益"
+    info: "查看宗门信息"

@@ -1,0 +1,22 @@
+name: Sect
+version: 1.0.0
+main: com.tahai.sect.Main
+api-version: 1.21
+depend:
+  - WorldGuard
+softdepend:
+  - Vault
+  - PlaceholderAPI
+commands:
+  sect:
+    description: Main command of Sect
+    usage: /sect <args>
+    permission: sect.use
+permissions:
+  sect.use:
+    description: Allows use of the /sect command
+    default: true
+  sect.reload:
+    description: Allows reloading the Sect configuration
+    default: op
+author: "§eTAHAI§r"
