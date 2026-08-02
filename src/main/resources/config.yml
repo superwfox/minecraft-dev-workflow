@@ -1,0 +1,26 @@
+# ItemBan 插件消息配置文件
+settings:
+  # 是否在控制台输出禁用物品的日志
+  log-to-console: true
+
+messages:
+  # 所有消息统一使用的前缀（Bukkit 可见，灰色）
+  prefix: "§7[ItemBan] §7"
+  # 玩家尝试使用被禁用物品时的提示（青色）
+  item-blocked: "§b该物品已被禁用，无法使用！"
+  # 权限不足提示（青色）
+  no-permission: "§b你没有权限执行此操作。"
+  # 命令格式错误提示（青色）
+  invalid-usage: "§b命令用法不正确，请查看帮助。"
+  # 添加禁用物品成功（黄色）
+  ban-success: "§e物品 %item% 已成功加入禁用列表。"
+  # 移除禁用物品成功（黄色）
+  unban-success: "§e物品 %item% 已从禁用列表中移除。"
+  # 物品已经在禁用列表中（青色）
+  already-banned: "§b物品 %item% 已在禁用列表中。"
+  # 物品不在禁用列表中（青色）
+  not-banned: "§b物品 %item% 不在禁用列表中。"
+  # 指定名称不是有效物品（青色）
+  invalid-item: "§b无法识别物品：%item%。请输入有效的物品名称或 ID。"
+  # 重载配置成功（黄色）
+  reload-success: "§e配置已重新加载。"

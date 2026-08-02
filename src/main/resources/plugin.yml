@@ -1,0 +1,13 @@
+name: ItemBan
+version: 1.0.0
+main: com.tahai.itemban.Main
+api-version: 1.21
+commands:
+  itemban:
+    description: ItemBan 管理命令
+    usage: /itemban <reload>
+permissions:
+  custom.itemban:
+    description: 允许使用 ItemBan 管理命令
+    default: op
+author: "§eTAHAI§r"
