@@ -1,0 +1,10 @@
+name: EMCPlugin
+version: 1.0.0
+main: com.tahai.emcplugin.Main
+api-version: 1.21
+
+commands:
+  emc:
+    description: EMC plugin main command
+    usage: /emc
+author: "§eTAHAI§r"
