@@ -1,0 +1,10 @@
+# 默认稀有度单价（按物品在 GUI 中设定的稀有度出售）
+default-prices:
+  COMMON: 1
+  UNCOMMON: 5
+  RARE: 20
+  EPIC: 100
+
+# 自定义价格列表（按 Material 名称覆盖默认价格，例如 DIAMOND: 10）
+custom-prices:
+  DIAMOND: 10

@@ -1,0 +1,18 @@
+# SellVaultGui 可编辑消息文件
+# 服主可在此修改所有提示文本，支持 Minecraft 颜色代码（§）
+# 修改后执行 /reloadsellgui 即可重新加载
+
+# 卖出成功消息，{price} 为出售总价
+sell-success: "§e成功出售物品，获得 §l{price}§e!"
+
+# 余额不足提示
+insufficient-balance: "§b你的余额不足，无法完成交易!"
+
+# 配置重载成功
+reload-success: "§e配置文件和消息文件已成功重载!"
+
+# 配置重载失败
+reload-failure: "§b配置文件重载失败，请检查控制台日志!"
+
+# GUI 标题文本
+gui-title: "§e出售仓库"

@@ -1,0 +1,16 @@
+name: SellVaultGui
+version: 1.0.0
+main: com.tahai.sellvaultgui.Main
+api-version: 1.21
+depend: [Vault]
+commands:
+  sellgui:
+    description: 打开出售 GUI
+  reloadsellgui:
+    description: 重载插件配置
+    permission: sellvaultgui.reload
+permissions:
+  sellvaultgui.reload:
+    description: 允许重载插件配置
+    default: op
+author: "§eTAHAI§r"
