@@ -1,0 +1,21 @@
+name: InfiniteWarehouse
+version: 1.0.0
+main: com.tahai.infinitewarehouse.Main
+api-version: 1.8
+
+commands:
+  warehouse:
+    description: 仓库主命令
+    usage: /warehouse <get>
+  warereload:
+    description: 重载仓库配置
+    permission: warehouse.reload
+
+permissions:
+  warehouse.get:
+    description: 允许使用 /warehouse get 命令
+    default: true
+  warehouse.reload:
+    description: 允许重载仓库配置
+    default: op
+author: "§eTAHAI§r"
