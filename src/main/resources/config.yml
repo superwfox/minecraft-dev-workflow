@@ -1,0 +1,8 @@
+# 数据库连接配置
+mysql:
+  host: localhost
+  port: 3306
+  database: banitem
+  username: root
+  password: ""
+  table: banitem
