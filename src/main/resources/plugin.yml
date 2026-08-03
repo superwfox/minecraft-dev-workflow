@@ -1,0 +1,13 @@
+name: BuilderShield
+version: 1.0.0
+main: com.tahai.buildershield.Main
+api-version: 1.21
+commands:
+  buildershield:
+    description: 主命令
+    permission: builder.shield.admin
+permissions:
+  builder.shield.admin:
+    description: 允许使用buildershield命令
+    default: op
+author: "§eTAHAI§r"

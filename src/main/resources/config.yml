@@ -1,0 +1,44 @@
+# BuilderShield 配置文件
+
+# 防护罩半径（单位：格）
+shield:
+  radius: 5.0
+
+# 生物弹飞设置
+mob-knockback:
+  # 弹飞力度
+  force: 2.0
+  # 弹飞高度
+  height: 1.0
+
+# 箭矢反弹设置
+arrow:
+  # 反弹速度
+  bounce-speed: 2.0
+  # 追踪强度（0 为不追踪）
+  tracking-strength: 0.1
+
+# 道具设置
+item:
+  # 道具材料
+  material: NETHER_STAR
+  # 道具名称
+  name: "§e§l建筑护盾"
+  # 道具描述
+  lore:
+    - "§7右键开启/关闭防护罩"
+  # PDC 键
+  pdc-key: "buildershield:shield_item"
+
+# 消息文本
+messages:
+  # 开启防护罩
+  enable: "§e防护罩已开启（半径：{radius} 格）"
+  # 关闭防护罩
+  disable: "§e防护罩已关闭"
+  # 日出自动关闭
+  auto-close: "§7日出，防护罩已自动关闭"
+  # 攻击被阻止
+  attack-blocked: "§b攻击被防护罩阻止"
+  # 获得道具
+  item-obtained: "§e你获得了建筑护盾道具"
