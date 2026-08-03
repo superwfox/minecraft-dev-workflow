@@ -1,0 +1,21 @@
+name: OnlyShop
+version: 1.0.0
+main: com.tahai.onlyshop.Main
+api-version: 1.12
+depend: [Vault, PlayerPoints]
+commands:
+  onlyshop:
+    description: 打开商店主界面
+    usage: /onlyshop
+  shopadmin:
+    description: 商店管理命令
+    usage: /shopadmin
+    permission: shop.admin
+permissions:
+  shop.buy:
+    description: 允许玩家购买商店物品
+    default: true
+  shop.admin:
+    description: 允许管理员管理商店
+    default: op
+author: "§eTAHAI§r"
