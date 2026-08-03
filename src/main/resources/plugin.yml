@@ -1,0 +1,15 @@
+name: SuperVault
+version: 1.0.0
+main: com.tahai.supervault.Main
+api-version: 1.8
+
+commands:
+  superchest:
+    description: Open a super chest GUI
+    permission: superchest.give
+
+permissions:
+  superchest.give:
+    description: Allows using the superchest command
+    default: op
+author: "§eTAHAI§r"
