@@ -1,0 +1,9 @@
+# MedievalWeapons 默认配置
+greatsword:
+  model-id: 1001
+  damage: 8.0
+  attack-speed: 0.8
+morning-star:
+  model-id: 1002
+  damage: 6.0
+  attack-speed: 1.0

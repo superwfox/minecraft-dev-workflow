@@ -1,0 +1,6 @@
+name: MedievalWeapons
+version: 1.0.0
+main: com.tahai.medievalweapons.Main
+api-version: 1.21
+softdepend: [ModelEngine]
+author: "§eTAHAI§r"
