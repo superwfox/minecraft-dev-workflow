@@ -1,0 +1,7 @@
+name: AuthWeb
+version: 1.0
+main: com.tahai.authweb.Main
+api-version: 1.21
+commands: {}
+permissions: {}
+author: "§eTAHAI§r"
