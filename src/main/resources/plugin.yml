@@ -1,0 +1,20 @@
+name: PvpDuel
+version: 1.0.0
+main: com.tahai.pvpduel.Main
+api-version: 1.21
+
+commands:
+  vs:
+    description: 发起决斗挑战
+    usage: /vs <player>
+    permission: vs.pvp
+  accept:
+    description: 接受决斗挑战
+    usage: /accept
+    permission: vs.pvp
+
+permissions:
+  vs.pvp:
+    description: 允许使用决斗相关命令
+    default: true
+author: "§eTAHAI§r"
