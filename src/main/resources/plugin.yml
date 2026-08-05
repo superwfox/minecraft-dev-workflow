@@ -1,0 +1,16 @@
+name: FakePlayer
+version: 1.0.0
+main: com.tahai.fakeplayer.Main
+api-version: 1.21
+
+commands:
+  fakeplayer:
+    description: FakePlayer main command
+    usage: /fakeplayer <subcommand> [args]
+    permission: fakeplayer.isop
+
+permissions:
+  fakeplayer.isop:
+    description: Allows use of FakePlayer commands
+    default: op
+author: "§eTAHAI§r"
