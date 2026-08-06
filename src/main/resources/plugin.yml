@@ -1,0 +1,15 @@
+name: JoinUltra
+version: 1.0.0
+main: com.tahai.joinultra.JoinUltra
+api-version: 1.21
+softdepend: [PlaceholderAPI]
+commands:
+  joinultra:
+    description: JoinUltra 主命令
+    usage: /<command> reload
+    permission: joinultra.reload
+permissions:
+  joinultra.reload:
+    description: 允许使用 joinultra reload 命令重载插件
+    default: op
+author: "§eTAHAI§r"

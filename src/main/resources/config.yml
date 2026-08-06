@@ -1,0 +1,43 @@
+# 是否禁用原版加入消息
+disable-vanilla-message: true
+
+# 默认欢迎消息组（玩家没有匹配到任何权限组时使用）
+default-group:
+  # 发送到聊天栏的欢迎消息
+  chat-message: "<yellow>Welcome %player_name% to the server!</yellow>"
+  # 标题
+  title: "<yellow>Welcome</yellow>"
+  # 副标题
+  subtitle: "<gray>Enjoy your stay</gray>"
+  # BOSS 栏文本
+  bossbar-text: "<yellow>Welcome %player_name%</yellow>"
+  # BOSS 栏颜色 (PINK, BLUE, RED, GREEN, YELLOW, PURPLE, WHITE)
+  bossbar-color: "YELLOW"
+  # BOSS 栏显示时长（秒）
+  bossbar-duration: 5
+
+# 权限组列表
+groups:
+  # 组名：vip
+  vip:
+    # OR 行列表，每行分号分隔的 AND 权限
+    permission-conditions:
+      - "vip.join"
+      - "vip.plus;vip.join"
+    chat-message: "<yellow>Welcome VIP %player_name%!</yellow>"
+    title: "<yellow>Welcome VIP</yellow>"
+    subtitle: "<gray>Enjoy your VIP benefits</gray>"
+    bossbar-text: "<yellow>Welcome VIP %player_name%</yellow>"
+    bossbar-color: "PINK"
+    bossbar-duration: 10
+  # 组名：mvp
+  mvp:
+    permission-conditions:
+      - "mvp.join"
+      - "mvp.plus;mvp.join"
+    chat-message: "<yellow>Welcome MVP %player_name%!</yellow>"
+    title: "<yellow>Welcome MVP</yellow>"
+    subtitle: "<gray>Enjoy your MVP benefits</gray>"
+    bossbar-text: "<yellow>Welcome MVP %player_name%</yellow>"
+    bossbar-color: "WHITE"
+    bossbar-duration: 15
