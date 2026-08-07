@@ -1,0 +1,15 @@
+name: PlayerScan
+version: 1.0.0
+main: com.tahai.playerscan.Main
+api-version: 1.21
+
+commands:
+  scan:
+    description: 扫描玩家信息
+    permission: scan.command.use
+
+permissions:
+  scan.command.use:
+    description: 允许使用 /scan 命令
+    default: op
+author: "§eTAHAI§r"
