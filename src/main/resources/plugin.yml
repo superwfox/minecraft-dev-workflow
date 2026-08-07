@@ -1,0 +1,13 @@
+name: ScanManager
+version: 1.0
+main: com.tahai.scanmanager.Main
+api-version: 1.21
+commands:
+  scan:
+    description: Scan manager main command
+    usage: /scan <args>
+permissions:
+  scan.admin:
+    description: Allows access to scan admin commands
+    default: op
+author: "§eTAHAI§r"
