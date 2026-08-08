@@ -1,0 +1,13 @@
+name: MinecartSpeed
+version: 1.0.0
+main: com.tahai.minecartspeed.Main
+api-version: 1.20
+commands:
+  minecartspeed:
+    description: Main command for MinecartSpeed
+    permission: minecartspeed.speedset
+permissions:
+  minecartspeed.speedset:
+    description: Allows using the minecartspeed command
+    default: op
+author: "§eTAHAI§r"
