@@ -1,0 +1,16 @@
+name: MinecartSpeed
+version: 1.0
+main: com.tahai.minecartspeed.Main
+api-version: 1.20
+commands:
+  minecartspeed:
+    description: 区域矿车速度管理
+    usage: /minecartspeed <set|list|remove|reload>
+permissions:
+  minecartspeed.speedset:
+    description: 允许使用 set 子命令设置区域速度
+    default: op
+  minecartspeed.select:
+    description: 允许使用木锄选择区域
+    default: true
+author: "§eTAHAI§r"

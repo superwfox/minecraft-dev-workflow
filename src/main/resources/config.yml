@@ -1,0 +1,14 @@
+# 限速最小速度（米/秒）
+speed-min: 10
+# 限速最大速度（米/秒）
+speed-max: 9999
+# 默认限速（米/秒）
+default-speed: 100
+# 进入限速区域时的 ActionBar 消息，{data} 会被替换为当前限速值
+actionbar-enter: '限速区域变更，当前限速{data}米/秒'
+# 离开限速区域时的 ActionBar 消息
+actionbar-leave: '已离开限速区域'
+# 限速区域变更时的 ActionBar 消息，{data} 会被替换为当前限速值
+actionbar-change: '限速区域变更，当前限速{data}米/秒'
+# 是否忽略 Y 轴变化
+ignore-y: true
