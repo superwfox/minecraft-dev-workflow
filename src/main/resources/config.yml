@@ -1,0 +1,19 @@
+# Sect 插件消息配置文件
+# 所有游戏内消息均可在此自定义
+
+# 命令帮助消息
+command-help:
+  header: "§7§l===== §eSect 帮助 §7§l====="
+  command: "§e/sect <参数> §7- 插件主命令"
+
+# 权限不足
+no-permission: "§b你没有权限执行此命令！"
+
+# 参数错误
+invalid-arguments: "§b参数错误！请输入 §e/sect help §b查看帮助。"
+
+# 命令不存在
+unknown-command: "§b未知的子命令！请输入 §e/sect help §b查看帮助。"
+
+# 配置重载成功
+reload-success: "§eSect 配置已重载！"
