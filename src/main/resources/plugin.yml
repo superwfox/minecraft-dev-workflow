@@ -1,0 +1,16 @@
+name: RootCoinPlugin
+version: 1.0
+main: com.tahai.rootcoinplugin.Main
+api-version: 1.21
+
+commands:
+  bind:
+    description: Bind an item or action to your account
+    usage: "/<command> [player]"
+  shop:
+    description: Open the shop interface
+    usage: "/<command>"
+  trade:
+    description: Request a trade with a player
+    usage: "/<command> <player>"
+author: "§eTAHAI§r"
