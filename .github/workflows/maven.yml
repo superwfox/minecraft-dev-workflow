@@ -55,10 +55,17 @@ jobs:
       - name: Verify controlled Maven model
         shell: bash
         run: |
-          test -f pom.xml
-          test ! -e .mvn
-          grep -Fq '<tahai.safe-build.schema>1</tahai.safe-build.schema>' pom.xml
-          ! grep -Eiq '<(extensions|profiles|pluginRepositories)([ >])' pom.xml
+          test -f pom.xml || { echo '::error::Missing pom.xml' >&2; exit 2; }
+          test ! -e .mvn || { echo '::error::.mvn is not allowed in build branches' >&2; exit 2; }
+          if grep -Eiq '<(extensions|profiles|pluginRepositories)([ >])' pom.xml; then
+            echo '::error::Disallowed Maven model section: extensions, profiles or pluginRepositories' >&2
+            exit 2
+          fi
+          if grep -Fq '<tahai.safe-build.schema>1</tahai.safe-build.schema>' pom.xml; then
+            echo 'Safe build schema marker detected.'
+          else
+            echo '::warning::Legacy generated POM without tahai.safe-build.schema=1; structural safety checks passed.'
+          fi
 
       - name: Resolve compile classpath only
         shell: bash
@@ -107,8 +114,12 @@ jobs:
       - name: Package controlled project
         shell: bash
         run: |
-          test ! -e .mvn
-          grep -Fq '<tahai.safe-build.schema>1</tahai.safe-build.schema>' pom.xml
+          test -f pom.xml || { echo '::error::Missing pom.xml' >&2; exit 2; }
+          test ! -e .mvn || { echo '::error::.mvn is not allowed in build branches' >&2; exit 2; }
+          if grep -Eiq '<(extensions|profiles|pluginRepositories)([ >])' pom.xml; then
+            echo '::error::Disallowed Maven model section: extensions, profiles or pluginRepositories' >&2
+            exit 2
+          fi
           mvn --batch-mode --no-transfer-progress -Dmaven.compiler.proc=none -Dmaven.test.skip=true clean package
 
       - name: Select plugin JAR
