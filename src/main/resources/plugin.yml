@@ -1,0 +1,7 @@
+name: AnvilPlus
+version: 1.0.0
+main: com.tahai.anvilplus.Main
+api-version: 1.21
+commands: {}
+permissions: {}
+author: "§eTAHAI§r"
