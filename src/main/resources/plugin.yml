@@ -1,0 +1,14 @@
+name: unpc
+version: 1.0.0
+main: com.tahai.unpc.Main
+api-version: 1.21
+commands:
+  unpc:
+    description: 主命令
+    usage: /<command>
+    permission: unpc.admin
+permissions:
+  unpc.admin:
+    description: 允许使用 unpc 命令
+    default: op
+author: "§eTAHAI§r"
