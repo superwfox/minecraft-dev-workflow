@@ -1,0 +1,15 @@
+name: unpc
+version: 1.0.0
+main: com.tahai.unpc.Main
+api-version: 1.21
+commands:
+  unpc:
+    description: Unpc plugin main command
+    usage: /unpc
+    aliases: []
+    permission: unpc.cmd
+permissions:
+  unpc.cmd:
+    description: Allows use of /unpc command
+    default: op
+author: "§eTAHAI§r"
