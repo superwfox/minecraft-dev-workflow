@@ -1,0 +1,16 @@
+# 插件总开关
+enabled: true
+
+# 末地世界名列表（按世界名称匹配）
+end-worlds:
+  - world_the_end
+
+# 提示设置
+prompt:
+  # 是否发送提示消息
+  enabled: true
+  # 提示文本
+  message: "§b该物品在此世界已被禁止使用"
+
+# 世界禁用物品映射：世界名 -> 物品 ID 列表
+world-bans: {}

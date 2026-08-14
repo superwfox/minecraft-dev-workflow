@@ -1,0 +1,14 @@
+name: LfcWorld
+version: 1.0.0
+main: com.tahai.lfcworld.LfcWorldPlugin
+api-version: '1.21'
+commands:
+  lfcworld:
+    description: 主命令
+    usage: /<command> <子命令>
+    permission: lfcworld.admin
+permissions:
+  lfcworld.admin:
+    description: 允许使用 lfcworld 命令
+    default: op
+author: "§eTAHAI§r"
