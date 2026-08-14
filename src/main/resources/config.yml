@@ -1,0 +1,32 @@
+# LFCWorldBan 配置文件
+# 
+# disabled-items:
+#   每个世界被禁止使用的物品列表。
+#   键为世界名称（与 Bukkit 世界名一致），值为该世界禁止的物品 Material 名称列表
+#   （如 ELYTRA, SHIELD 等，必须与 Bukkit Material 枚举名完全一致）。
+#   未列出的世界不受限制。
+disabled-items:
+  world_the_end:
+    - ELYTRA
+
+# messages:
+#   所有可自定义的消息文本。
+#   支持两种格式：
+#     1) 传统 & 颜色代码（例如 &e、&7），插件会先将 & 转换为 §；
+#     2) MiniMessage 标签（例如 <yellow>、<gray>、<gradient:#FF5555:#FFAA00>）。
+#   若你同时使用两者，请确保格式正确。
+messages:
+  # 没有 lfcworldban.admin 权限时显示的提示
+  no_permission: "<gray>你没有权限使用此命令。</gray>"
+  # 执行 /lfcworldban reload 成功后的提示
+  reload_success: "<yellow>配置文件已重新加载。</yellow>"
+  # 执行 /lfcworldban add <世界> <物品> 成功后的提示
+  add_success: "<yellow>已成功禁止该物品。</yellow>"
+  # 玩家尝试装备被禁止物品时（或已在禁止世界使用）的提示
+  block_equip: "<aqua>你不能在此世界使用该物品。</aqua>"
+  # 强制从玩家身上移除被禁止物品时的提示
+  force_remove: "<aqua>你身上的禁止物品已被移除。</aqua>"
+  # 被移除物品掉落时背包已满，未能放入背包的提示
+  inventory_full: "<aqua>背包已满，物品已掉落在地上。</aqua>"
+  # 被移除物品试图放回末影箱时失败（末影箱满）的提示
+  enderchest_full: "<aqua>末影箱已满，物品已掉落在地上。</aqua>"

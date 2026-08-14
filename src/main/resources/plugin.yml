@@ -1,0 +1,17 @@
+name: LFCWorldBan
+version: 1.0.0
+main: com.tahai.lfcworldban.Main
+api-version: 1.21
+softdepend:
+  - PlaceholderAPI
+commands:
+  lfcworldban:
+    description: LFCWorldBan main command
+    aliases:
+      - lfcban
+    permission: lfcworldban.admin
+permissions:
+  lfcworldban.admin:
+    description: Allows access to LFCWorldBan admin commands
+    default: op
+author: "§eTAHAI§r"
