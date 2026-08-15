@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <groupId>com.tahai</groupId>
+    <artifactId>demo</artifactId>
+    <version>1.0.0</version>
+</project>
+package com.example.luckycolumns;
+
+import org.bukkit.plugin.java.JavaPlugin;
+
+public final class Main extends JavaPlugin {
+
+    private static Main instance;
+    private GameManager gameManager;
+
+    @Override
+    public void onEnable() {
+        instance = this;
+        gameManager = new GameManager(this);
+
+        getServer().getPluginManager().registerEvents(new PlayerListener(this), this);
+        getCommand("lucky").setExecutor(new LuckyCommand(this));
+
+        getLogger().info("幸运之柱插件已启用！");
+    }
+
+    @Override
+    public void onDisable() {
+        getLogger().info("幸运之柱插件已禁用。");
+    }
+
+    public static Main getInstance() { return instance; }
+    public GameManager getGameManager() { return gameManager; }
+}package com.example.luckycolumns;
+
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
+import org.bukkit.*;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitRunnable;
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+public class GameManager {
+
+    private final JavaPlugin plugin;
+    private final Set<UUID> players = new HashSet<>();
+    private final Set<UUID> alive = new HashSet<>();
+    private final Map<UUID, Integer> killCount = new HashMap<>();
+    private boolean gameRunning = false;
+    private boolean gameEnded = false;
+    private int taskId = -1;
+
+    // 可随机给予的物品列表
+    private final List<ItemStack> randomItems = Arrays.asList(
+            new ItemStack(Material.OAK_DOOR),
+            new ItemStack(Material.OAK_BOAT),
+            new ItemStack(Material.STONE_BUTTON),
+            new ItemStack(Material.IRON_SWORD)
+    );
+
+    // 4 个柱子的玻璃坐标（对角）
+    private final List<Location[]> glassRegions = Arrays.asList(
+            new Location[]{new Location(null, 0, 69, 5), new Location(null, 1, 70, 7)},
+            new Location[]{new Location(null, 0, 69, -5), new Location(null, -1, 70, -7)},
+            new Location[]{new Location(null, 5, 69, 0), new Location(null, 7, 70, 1)},
+            new Location[]{new Location(null, -5, 69, 0), new Location(null, -7, 70, -1)}
+    );
+
+    private final Location lobbyLocation = new Location(null, 0, 65, 0);
+
+    public GameManager(JavaPlugin plugin) {
+        this.plugin = plugin;
+    }
+
+    public void startGame(Player starter) {
+        if (gameRunning) {
+            starter.sendMessage(Component.text("游戏已经在进行中！", NamedTextColor.RED));
+            return;
+        }
+
+        // 加入所有玩家
+        for (Player p : Bukkit.getOnlinePlayers()) {
+            players.add(p.getUniqueId());
+            alive.add(p.getUniqueId());
+            killCount.putIfAbsent(p.getUniqueId(), 0);
+            p.teleport(getColumnTop(p));
+        }
+
+        gameRunning = true;
+        gameEnded = false;
+
+        // 开始倒计时
+        countdown(starter);
+    }
+
+    private void countdown(Player starter) {
+        BukkitRunnable task = new BukkitRunnable() {
+            int timer = 0;
+
+            @Override
+            public void run() {
+                if (timer > 60) {
+                    // 倒计时结束
+                    for (Player p : Bukkit.getOnlinePlayers()) {
+                        if (players.contains(p.getUniqueId())) {
+                            // 消除玻璃
+                            removeGlass(p);
+                            // 给随机物品
+                            giveRandomItem(p);
+                            p.sendMessage(Component.text("开始！", NamedTextColor.GREEN));
+                        }
+                    }
+                    gameRunning = true;
+                    this.cancel();
+                    return;
+                }
+
+                // 显示倒计时
+                String text;
+                NamedTextColor color;
+                if (timer <= 20) {
+                    text = "3";
+                    color = NamedTextColor.YELLOW;
+                } else if (timer <= 40) {
+                    text = "2";
+                    color = NamedTextColor.DARK_PURPLE;
+                } else {
+                    text = "1";
+                    color = NamedTextColor.RED;
+                }
+
+                for (Player p : Bukkit.getOnlinePlayers()) {
+                    if (players.contains(p.getUniqueId())) {
+                        p.sendTitle(text, "", 0, 20, 0);
+                    }
+                }
+                timer++;
+            }
+        };
+        task.runTaskTimer(plugin, 0L, 20L); // 每秒执行一次
+    }
+
+    private Location getColumnTop(Player p) {
+        // 根据玩家所在世界返回柱子顶部坐标
+        World world = p.getWorld();
+        return new Location(world, 0, 69, 6);
+    }
+
+    private void removeGlass(Player p) {
+        World world = p.getWorld();
+        for (Location[] region : glassRegions) {
+            Location pos1 = new Location(world, region[0].getX(), region[0].getY(), region[0].getZ());
+            Location pos2 = new Location(world, region[1].getX(), region[1].getY(), region[1].getZ());
+            // 用 fill 清除玻璃（实际需要逐块设置，简化实现用循环）
+            for (int x = (int) pos1.getX(); x <= (int) pos2.getX(); x++) {
+                for (int y = (int) pos1.getY(); y <= (int) pos2.getY(); y++) {
+                    for (int z = (int) pos1.getZ(); z <= (int) pos2.getZ(); z++) {
+                        Location loc = new Location(world, x, y, z);
+                        loc.getBlock().setType(Material.AIR);
+                    }
+                }
+            }
+        }
+    }
+
+    private void giveRandomItem(Player p) {
+        ItemStack item = randomItems.get(new Random().nextInt(randomItems.size()));
+        p.getInventory().setItemInMainHand(item);
+        // 无任何提示
+    }
+
+    public void handleDeath(Player player) {
+        if (!gameRunning || gameEnded) return;
+        UUID uuid = player.getUniqueId();
+        if (!alive.contains(uuid)) return;
+
+        alive.remove(uuid);
+        player.setGameMode(GameMode.SPECTATOR);
+        player.sendTitle(Component.text("☠ 你已死亡", NamedTextColor.RED));
+
+        // 击杀者奖励（击杀者 = 造成伤害的玩家，简化版本略）
+
+        // 检查胜利条件
+        if (alive.size() <= 1) {
+            endGame();
+        }
+    }
+
+    private void endGame() {
+        if (gameEnded) return;
+        gameEnded = true;
+        gameRunning = false;
+
+        if (alive.isEmpty()) {
+            // 全员阵亡
+            for (Player p : Bukkit.getOnlinePlayers()) {
+                p.sendMessage(Component.text("💀 全员阵亡！本局无胜利者", NamedTextColor.RED));
+            }
+        } else {
+            // 有胜利者
+            UUID winnerId = alive.iterator().next();
+            Player winner = Bukkit.getPlayer(winnerId);
+            if (winner != null) {
+                for (Player p : Bukkit.getOnlinePlayers()) {
+                    p.sendMessage(Component.text("🏆 游戏结束！胜利者：" + winner.getName(), NamedTextColor.GOLD));
+                    p.sendTitle(Component.text("🏆 游戏结束！", NamedTextColor.GOLD),
+                            Component.text("胜利者：" + winner.getName(), NamedTextColor.GREEN));
+                }
+                // 放烟花（简化版）
+                winner.getWorld().spawn(winner.getLocation().add(0, 2, 0), org.bukkit.entity.Firework.class);
+                winner.getWorld().spawn(winner.getLocation().add(0, 3, 0), org.bukkit.entity.Firework.class);
+                winner.getWorld().spawn(winner.getLocation().add(0, 4, 0), org.bukkit.entity.Firework.class);
+            }
+        }
+
+        // 返回大厅
+        Bukkit.getScheduler().runTaskLater(plugin, () -> {
+            for (Player p : Bukkit.getOnlinePlayers()) {
+                if (players.contains(p.getUniqueId())) {
+                    p.setGameMode(GameMode.SURVIVAL);
+                    p.teleport(lobbyLocation);
+                }
+            }
+            resetGame();
+        }, 100L); // 5秒后返回大厅
+    }
+
+    private void resetGame() {
+        players.clear();
+        alive.clear();
+        killCount.clear();
+        gameRunning = false;
+        gameEnded = false;
+    }
+
+    // 供外部调用的结束方法
+    public void forceEnd() {
+        resetGame();
+        for (Player p : Bukkit.getOnlinePlayers()) {
+            p.setGameMode(GameMode.SURVIVAL);
+            p.teleport(lobbyLocation);
+        }
+    }
+}package com.example.luckycolumns;
+
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
+
+public class PlayerListener implements Listener {
+
+    private final Main plugin;
+
+    public PlayerListener(Main plugin) {
+        this.plugin = plugin;
+    }
+
+    @EventHandler
+    public void onPlayerDeath(PlayerDeathEvent event) {
+        Player player = event.getEntity();
+        plugin.getGameManager().handleDeath(player);
+    }
+
+    @EventHandler
+    public void onPlayerQuit(PlayerQuitEvent event) {
+        Player player = event.getPlayer();
+        plugin.getGameManager().handleDeath(player);
+    }
+
+    @EventHandler
+    public void onPlayerMove(PlayerMoveEvent event) {
+        Player player = event.getPlayer();
+        // 掉入虚空检测
+        if (player.getLocation().getY() < -64) {
+            plugin.getGameManager().handleDeath(player);
+        }
+    }
+
+    @EventHandler
+    public void onEntityDamage(EntityDamageEvent event) {
+        if (event.getEntity() instanceof Player player) {
+            // 掉虚空伤害处理（已由 onPlayerMove 处理）
+            if (event.getCause() == EntityDamageEvent.DamageCause.VOID) {
+                event.setCancelled(true);
+                plugin.getGameManager().handleDeath(player);
+            }
+        }
+    }
+}package com.example.luckycolumns;
+
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
+
+public class LuckyCommand implements CommandExecutor {
+
+    private final Main plugin;
+
+    public LuckyCommand(Main plugin) {
+        this.plugin = plugin;
+    }
+
+    @Override
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command,
+                             @NotNull String label, @NotNull String[] args) {
+        if (!(sender instanceof Player player)) {
+            sender.sendMessage(Component.text("只有玩家可以使用此命令！", NamedTextColor.RED));
+            return true;
+        }
+
+        if (args.length == 0) {
+            player.sendMessage(Component.text("使用 /lucky start 开始游戏", NamedTextColor.YELLOW));
+            player.sendMessage(Component.text("使用 /lucky stop 强制结束", NamedTextColor.YELLOW));
+            return true;
+        }
+
+        switch (args[0].toLowerCase()) {
+            case "start":
+                plugin.getGameManager().startGame(player);
+                return true;
+            case "stop":
+                plugin.getGameManager().forceEnd();
+                player.sendMessage(Component.text("游戏已强制结束！", NamedTextColor.RED));
+                return true;
+            default:
+                player.sendMessage(Component.text("未知子命令", NamedTextColor.RED));
+                return true;
+        }
+    }
+}name: LuckyColumns
+version: "1.0.0"
+main: com.example.luckycolumns.Main
+api-version: "1.21.11"
+description: 幸运之柱小游戏
+author: YourName
+
+commands:
+  lucky:
+    description: 控制幸运之柱游戏
+    usage: /lucky <start|stop>
+    permission: lucky.use
+
+permissions:
+  lucky.use:
+    description: 允许使用 /lucky 命令
+    default: opplugins {
+    java
+    id("com.gradleup.shadow") version "8.3.0"
+}
+
+group = "com.example"
+version = "1.0.0-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+    maven("https://repo.papermc.io/repository/maven-public/")
+}
+
+dependencies {
+    compileOnly("io.papermc.paper:paper-api:1.21.11-R0.1-SNAPSHOT")
+}
+
+java {
+    toolchain.languageVersion.set(JavaLanguageVersion.of(21))
+}
+
+tasks {
+    shadowJar {
+        archiveClassifier.set("")
+    }
+    build {
+        dependsOn(shadowJar)
+    }
+}
