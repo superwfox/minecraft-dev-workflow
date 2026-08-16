@@ -1,0 +1,14 @@
+name: SlimeBoss
+version: 1.0.0
+main: com.tahai.slimeboss.Main
+api-version: 1.21
+commands:
+  spawnslimeking:
+    description: 生成史莱姆王 BOSS
+    usage: /spawnslimeking
+    permission: slimeboss.spawn
+permissions:
+  slimeboss.spawn:
+    description: 允许生成史莱姆王 BOSS
+    default: op
+author: "§eTAHAI§r"
