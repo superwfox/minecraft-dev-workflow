@@ -1,0 +1,39 @@
+# 基础扫描范围
+scan-radius: 20
+adsorb-distance: 3.0
+move-step: 0.15
+
+# 猫咪动画配置
+enable-head-swing: true
+head-max-angle: 45.0
+head-swing-tick: 5
+enable-arch-back: true
+
+# 互动参数
+fight-tick-duration: 400
+particle-count: 8
+enable-heal: true
+heal-amount: 0.5
+
+# 全部音效自定义音量、音调
+sound:
+  pair:
+    name: ENTITY_CAT_PURR
+    volume: 1.0
+    pitch: 1.2
+  adsorb_loop:
+    name: ENTITY_CAT_AMBIENT
+    volume: 0.6
+    pitch: 1.0
+  fight_start:
+    name: ENTITY_CAT_HISS
+    volume: 0.9
+    pitch: 0.8
+  fight_loop:
+    name: ENTITY_CAT_MEOW
+    volume: 0.7
+    pitch: 1.1
+  fight_end:
+    name: ENTITY_CAT_PURR
+    volume: 0.8
+    pitch: 1.4
