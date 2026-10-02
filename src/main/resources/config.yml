@@ -1,0 +1,9 @@
+maintenance-mode: false
+cooldown: 2000
+elevator-block: EMERALD_BLOCK
+max-search: 128
+enable-particle: true
+enable-sound: true
+msg-success: "&a传送成功"
+msg-cooldown: "&c冷却中，请稍后"
+msg-no-found: "&c没有找到对应电梯"

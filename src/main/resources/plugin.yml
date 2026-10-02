@@ -1,0 +1,9 @@
+name: EmeraldElevator
+version: 1.0
+main: com.emeraldelevator.Main
+api-version: 1.21
+permissions:
+  elevator.use:
+    description: 使用绿宝石电梯
+    default: true
+author: "§eTAHAI§r"
