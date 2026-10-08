@@ -1,0 +1,5 @@
+# MaceShieldBreak 默认配置
+# whitelist: 重锤破盾白名单，元素为玩家 UUID 字符串
+# 只有列表中的玩家使用重锤击中持盾目标时才会破盾
+# 可通过 /mace whitelist add|remove <玩家> 管理
+whitelist: []
