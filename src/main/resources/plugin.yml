@@ -1,0 +1,17 @@
+name: MaceShieldBreak
+version: 1.0.0
+main: com.tahai.maceshieldbreak.MaceShieldBreakPlugin
+api-version: 1.21
+description: 重锤破盾管理插件
+commands:
+  macewhitelist:
+    description: 管理重锤破盾白名单
+    usage: /macewhitelist add|remove <玩家>
+    aliases:
+      - mw
+    permission: maceshieldbreak.command
+permissions:
+  maceshieldbreak.command:
+    description: 允许使用 /macewhitelist 管理重锤破盾白名单
+    default: op
+author: "§eTAHAI§r"
