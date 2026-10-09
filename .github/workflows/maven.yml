@@ -41,10 +41,11 @@ jobs:
         run: |
           [[ "$BUILD_REF" =~ ^build-[A-Za-z0-9_-]{8,80}$ ]] || { echo 'Invalid build branch' >&2; exit 2; }
           [[ "$JAVA_RELEASE" =~ ^(8|11|17|21|25)$ ]] || { echo 'Invalid Java release' >&2; exit 2; }
+          [[ "$GITHUB_REF_NAME" == "$BUILD_REF" ]] || { echo 'Dispatch ref must match build branch' >&2; exit 2; }
 
       - uses: actions/checkout@v4
         with:
-          ref: ${{ inputs.branch }}
+          ref: ${{ github.sha }}
           fetch-depth: 1
           persist-credentials: false
 
@@ -69,6 +70,7 @@ jobs:
           fi
 
       - name: Freeze compile evidence producer
+        continue-on-error: true
         shell: bash
         run: |
           cp -- tools/compile_api_evidence.py "$RUNNER_TEMP/compile_api_evidence.py"
@@ -117,7 +119,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ inputs.branch }}
+          ref: ${{ github.sha }}
           fetch-depth: 1
           persist-credentials: false
 
