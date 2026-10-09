@@ -95,6 +95,13 @@ class InventoryTests(unittest.TestCase):
         with self.assertRaises(evidence.EvidenceError):
             evidence.scan_jar(jar, 21)
 
+    def test_compressed_manifest_is_bounded_before_reading(self):
+        jar = self.root / "oversized-manifest.jar"
+        with zipfile.ZipFile(jar, "w", compression=zipfile.ZIP_DEFLATED) as archive:
+            archive.writestr("META-INF/MANIFEST.MF", "x" * 65537)
+        with self.assertRaises(evidence.EvidenceError):
+            evidence.scan_jar(jar, 21)
+
     def test_snapshot_requires_timestamped_matching_artifact(self):
         metadata = self.jar.parent / "maven-metadata-test.xml"
         metadata.write_text("<metadata><versioning><snapshotVersions><snapshotVersion><extension>jar</extension><value>1.21-R0.1-20260101.123456-9</value></snapshotVersion></snapshotVersions></versioning></metadata>")
