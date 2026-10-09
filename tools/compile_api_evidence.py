@@ -123,7 +123,10 @@ def scan_jar(path, release):
         entries = archive.infolist()
         if len(entries) > 100000 or len({entry.filename for entry in entries}) != len(entries):
             raise EvidenceError("jar_entries_invalid")
-        manifest = archive.read("META-INF/MANIFEST.MF").decode("utf-8", "replace") if "META-INF/MANIFEST.MF" in archive.namelist() else ""
+        manifest_entry = next((entry for entry in entries if entry.filename == "META-INF/MANIFEST.MF"), None)
+        if manifest_entry and manifest_entry.file_size > 65536:
+            raise EvidenceError("manifest_too_large")
+        manifest = archive.read(manifest_entry).decode("utf-8", "replace") if manifest_entry else ""
         multi = bool(re.search(r"^Multi-Release:\s*true\s*$", manifest, re.I | re.M))
         selected = {}
         for entry in entries:
