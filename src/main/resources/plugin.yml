@@ -1,0 +1,18 @@
+name: FreezeControl
+version: 1.0.0
+main: com.tahai.freezecontrol.Main
+api-version: 1.21
+description: 全局冻结控制插件
+author: "tahai §eTAHAI§r"
+
+commands:
+  freeze:
+    description: 开启或关闭全局冻结，并管理冻结白名单
+    usage: /freeze <on|off|add|remove|list> [player]
+    permission: freezecontrol.admin
+    permission-message: §b你没有权限使用该命令
+
+permissions:
+  freezecontrol.admin:
+    description: 允许使用 /freeze 命令管理全局冻结与白名单
+    default: op
