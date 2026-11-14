@@ -1,0 +1,17 @@
+name: HookWhitelist
+version: 1.0.0
+main: com.tahai.hookwhitelist.Main
+api-version: 1.21
+description: 管理鱼竿勾人白名单
+commands:
+  hookwl:
+    description: 管理鱼竿勾人白名单
+    usage: /hookwl <add|remove|list> [玩家名]
+    aliases:
+      - hwl
+    permission: hookwhitelist.use
+permissions:
+  hookwhitelist.use:
+    description: 允许使用 /hookwl 管理鱼竿勾人白名单
+    default: op
+author: "§eTAHAI§r"
